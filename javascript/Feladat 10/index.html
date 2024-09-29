@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square with Diagonal</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Draw Square with Diagonal</h1>
+        <form id="square-form">
+            <label for="size">Please enter the square size:</label>
+            <input type="number" id="size" min="1" required><br>
+            
+            <button type="button" onclick="drawSquare()">Draw Square</button>
+        </form>
+        <div id="results">
+            <h2>Result:</h2>
+            <pre id="square-result">-</pre>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
