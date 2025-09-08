@@ -1,0 +1,85 @@
+body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(125deg, #93ebf7, #f8b9ce);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      color: #444;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .menu {
+      margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .menu button, .menu select, .menu input {
+      margin: 8px;
+      padding: 10px 15px;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .menu button {
+      background: #81c784;
+      color: white;
+    }
+
+    .menu button:hover {
+      background: #66bb6a;
+    }
+
+    .menu select, .menu input {
+      border: 1px solid #bbb;
+      background: #f9f9f9;
+    }
+
+    .joke {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      display: inline-block;
+      max-width: 600px;
+      min-width: 300px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+      margin-top: 20px;
+      text-align: center;
+      animation: fadeIn 0.5s;
+    }
+
+    .joke h3 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .joke p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }

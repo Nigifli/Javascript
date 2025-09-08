@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Joke searcher</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="script.js">
+</head>
+<body>
+  <h1>Joke searcher</h1>
+
+  <div class="menu">
+    <button id="btn-random">🎲 Random joke 🎲</button>
+    <br>
+    <input type="number" id="input-id" placeholder="Search by ID..." min="0" />
+    <button id="btn-by-id">🔍 Search by ID 🔍</button>
+    <br>
+    <select id="select-type">
+      <option value="">-- Select a type --</option>
+      <option value="programming">Programming</option>
+      <option value="general">General</option>
+      <option value="knock-knock">Knock-Knock</option>
+    </select>
+    <button id="btn-by-type">📂 Select by type 📂</button>
+  </div>
+
+  <div class="joke" id="joke-container">
+    <h3>The joke appears here.</h3>
+  </div>
+
+  <div class="footer">
+    Want a new joke? Just click on a green button.
+  </div>
+</body>
+</html>
