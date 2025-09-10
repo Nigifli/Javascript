@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <form id="form">
+        <input id = "nev" type="text" placeholder="Nev">
+        <input id = "iranyitoszam" type="text" placeholder="Iranyitoszam">
+        <input id = "telepules" type="text" placeholder="Telepules">
+        <input id = "utca" type="text" placeholder="Utca">
+        <input id = "hazszam" type="text" placeholder="Hazszam">
+
+        <button id="mentes" type="submit">Mentes</button>
+    </form>
+</body>
+
+<script>
+    document.getElementById("form").addEventListener('submit', function(event)
+    {
+        event.preventDefault();
+
+        const nev=document.getElementById('nev').value;
+        const iranyitoszam=document.getElementById('iranyitoszam').value;
+        const telepules=document.getElementById('telepules').value;
+        const utca=document.getElementById('utca').value;
+        const hazszam=document.getElementById('hazszam').value;
+
+        localStorage.setItem('nev', nev);
+        localStorage.setItem('iranyitoszam', iranyitoszam);
+        localStorage.setItem('telepules', telepules);
+        localStorage.setItem('utca', utca);
+        localStorage.setItem('hazszam', hazszam);
+
+        alert('Sikeres mentes!');
+
+        console.log(nev);
+        console.log(iranyitoszam);
+        console.log(telepules);
+        console.log(utca);
+        console.log(hazszam);
+    });
+
+
+</script>
+</html>
