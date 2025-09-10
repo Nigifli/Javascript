@@ -1,85 +1,105 @@
 body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(125deg, #93ebf7, #f8b9ce);
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      margin: 0;
-      padding: 40px 20px;
-    }
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #93ebf7, #f8b9ce);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  min-height: 100vh;
+}
 
-    h1 {
-      margin-bottom: 25px;
-      color: #444;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    }
+.navbar {
+  background: #2c3e50;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
 
-    .menu {
-      margin-bottom: 30px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 20px 30px;
-      border-radius: 20px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      text-align: center;
-    }
+.navbar a {
+  color: #ecf0f1;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s;
+}
 
-    .menu button, .menu select, .menu input {
-      margin: 8px;
-      padding: 10px 15px;
-      font-size: 14px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+.navbar a:hover {
+  background: #34495e;
+}
 
-    .menu button {
-      background: #81c784;
-      color: white;
-    }
+.navbar a.active {
+  background: #1abc9c;
+  color: white;
+}
 
-    .menu button:hover {
-      background: #66bb6a;
-    }
+.page {
+  padding: 50px 20px;
+  display: none;
+}
 
-    .menu select, .menu input {
-      border: 1px solid #bbb;
-      background: #f9f9f9;
-    }
+.page h2, .page h1 {
+  margin-bottom: 25px;
+  color: #2c3e50;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
 
-    .joke {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      display: inline-block;
-      max-width: 600px;
-      min-width: 300px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-      margin-top: 20px;
-      text-align: center;
-      animation: fadeIn 0.5s;
-    }
+button {
+  background: #1abc9c;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
 
-    .joke h3 {
-      margin-bottom: 15px;
-      color: #333;
-    }
+button:hover {
+  background: #16a085;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
 
-    .joke p {
-      font-size: 18px;
-      color: #555;
-    }
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-right: 10px;
+}
 
-    .footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #666;
-    }
+.joke {
+  background: white;
+  margin-top: 25px;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 19px;
+  line-height: 1.5;
+  color: #333;
+  animation: fadeIn 0.5s;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+.joke h3 {
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+.joke p {
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

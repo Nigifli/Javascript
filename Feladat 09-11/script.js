@@ -1,57 +1,68 @@
-const container = document.getElementById('joke-container');
+const pages = document.querySelectorAll(".page");
+const navLinks = document.querySelectorAll(".navbar a");
 
-    function fetchAndShow(url) {
-      container.innerHTML = "<p>⏳ Loading...</p>";
-      fetch(url)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Hálózati hiba!');
-          }
-          return response.json();
-        })
-        .then(data => {
-          displayJoke(data);
-        })
-        .catch(error => {
-          container.innerHTML = `<p style="color:red;">Hiba: ${error.message}</p>`;
-        });
-    }
+function showPage(pageId) {
+  pages.forEach(p => p.style.display = "none");
+  document.getElementById(pageId).style.display = "block";
 
-    function displayJoke(data) {
-      if (Array.isArray(data)) {
-        data = data[0];
-      }
-      if (data.setup && data.punchline) {
-        container.innerHTML = `
-          <h3>${data.setup}</h3>
-          <p><b>${data.punchline}</b></p>
-        `;
-      } else if (data.joke) {
-        container.innerHTML = `<p>${data.joke}</p>`;
-      } else {
-        container.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-      }
-    }
+  navLinks.forEach(link => link.classList.remove("active"));
+  document.querySelector(`.navbar a[data-page="${pageId}"]`).classList.add("active");
+}
 
-    document.getElementById('btn-random')
-      .addEventListener('click', () => fetchAndShow('https://official-joke-api.appspot.com/jokes/random'));
+navLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const pageId = link.getAttribute("data-page");
+    showPage(pageId);
+  });
+});
 
-    document.getElementById('btn-by-id')
-      .addEventListener('click', () => {
-        const id = document.getElementById('input-id').value;
-        if (id) {
-          fetchAndShow(`https://official-joke-api.appspot.com/jokes/${id}`);
-        } else {
-          container.innerHTML = `<p style="color:orange;">Adj meg egy ID-t!</p>`;
-        }
-      });
+showPage("home");
 
-    document.getElementById('btn-by-type')
-      .addEventListener('click', () => {
-        const type = document.getElementById('select-type').value;
-        if (type) {
-          fetchAndShow(`https://official-joke-api.appspot.com/jokes/${type}/random`);
-        } else {
-          container.innerHTML = `<p style="color:orange;">Válassz egy típust!</p>`;
-        }
-      });
+function displayJoke(container, data) {
+  if (Array.isArray(data)) data = data[0];
+  if (data.setup && data.punchline) {
+    container.innerHTML = `<h3>${data.setup}</h3><p><b>${data.punchline}</b></p>`;
+  } else if (data.joke) {
+    container.innerHTML = `<p>${data.joke}</p>`;
+  } else {
+    container.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+  }
+}
+
+function fetchAndShow(url, container) {
+  container.innerHTML = "⏳ Töltés...";
+  fetch(url)
+    .then(r => {
+      if (!r.ok) throw new Error("Nincs ilyen ID-val rendelkező vicc!");
+      return r.json();
+    })
+    .then(data => displayJoke(container, data))
+    .catch(err => container.innerHTML = `<p style="color:red;">⚠️ ${err.message}</p>`);
+}
+
+document.getElementById("btn-random").addEventListener("click", () => {
+  fetchAndShow("https://official-joke-api.appspot.com/jokes/random", document.getElementById("random-container"));
+});
+
+document.getElementById("btn-programming").addEventListener("click", () => {
+  fetchAndShow("https://official-joke-api.appspot.com/jokes/programming/random", document.getElementById("programming-container"));
+});
+
+document.getElementById("btn-general").addEventListener("click", () => {
+  fetchAndShow("https://official-joke-api.appspot.com/jokes/general/random", document.getElementById("general-container"));
+});
+
+document.getElementById("btn-knock").addEventListener("click", () => {
+  fetchAndShow("https://official-joke-api.appspot.com/jokes/knock-knock/random", document.getElementById("knock-container"));
+});
+
+document.getElementById("btn-by-id").addEventListener("click", () => {
+  const id = document.getElementById("input-id").value;
+  const container = document.getElementById("id-container");
+  if (id) {
+    fetchAndShow(`https://official-joke-api.appspot.com/jokes/${id}`, container);
+  } else {
+    container.innerHTML = `<p style="color:orange;">Adj meg egy ID-t!</p>`;
+  }
+});

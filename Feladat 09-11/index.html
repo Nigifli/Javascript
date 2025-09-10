@@ -2,34 +2,55 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <title>Joke searcher</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="script.js">
+  <title>Joke Searcher</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Joke searcher</h1>
+  <nav class="navbar">
+    <a href="#" data-page="home">🏠 Főmenü</a>
+    <a href="#" data-page="random">🎲 Random</a>
+    <a href="#" data-page="programming">💻 Programozó</a>
+    <a href="#" data-page="general">📖 Általános</a>
+    <a href="#" data-page="knock-knock">🚪 Kopp-Kopp</a>
+    <a href="#" data-page="by-id">🔍 ID alapján</a>
+  </nav>
 
-  <div class="menu">
-    <button id="btn-random">🎲 Random joke 🎲</button>
-    <br>
-    <input type="number" id="input-id" placeholder="Search by ID..." min="0" />
-    <button id="btn-by-id">🔍 Search by ID 🔍</button>
-    <br>
-    <select id="select-type">
-      <option value="">-- Select a type --</option>
-      <option value="programming">Programming</option>
-      <option value="general">General</option>
-      <option value="knock-knock">Knock-Knock</option>
-    </select>
-    <button id="btn-by-type">📂 Select by type 📂</button>
+  <div class="page" id="home">
+    <h1>Vicckereső</h1>
+    <p>Válassz a fenti menüből egy lehetőséget!</p>
   </div>
 
-  <div class="joke" id="joke-container">
-    <h3>The joke appears here.</h3>
+  <div class="page" id="random" style="display:none;">
+    <h2>🎲 Random vicc</h2>
+    <button id="btn-random">Új random vicc</button>
+    <div id="random-container" class="joke"></div>
   </div>
 
-  <div class="footer">
-    Want a new joke? Just click on a green button.
+  <div class="page" id="programming" style="display:none;">
+    <h2>💻 Programozó vicc</h2>
+    <button id="btn-programming">Új vicc</button>
+    <div id="programming-container" class="joke"></div>
   </div>
+
+  <div class="page" id="general" style="display:none;">
+    <h2>📖 Általános vicc</h2>
+    <button id="btn-general">Új vicc</button>
+    <div id="general-container" class="joke"></div>
+  </div>
+
+  <div class="page" id="knock-knock" style="display:none;">
+    <h2>🚪 Kopp-Kopp vicc</h2>
+    <button id="btn-knock">Új vicc</button>
+    <div id="knock-container" class="joke"></div>
+  </div>
+
+  <div class="page" id="by-id" style="display:none;">
+    <h2>🔍 Vicc ID alapján</h2>
+    <input type="number" id="input-id" placeholder="Írd be az ID-t...">
+    <button id="btn-by-id">Keresés</button>
+    <div id="id-container" class="joke"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
