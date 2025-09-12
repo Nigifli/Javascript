@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bejelentkezés</title>
+
+    <style>
+      body {
+        text-align: center;
+        background-color: #a9ebe2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bejelentkezés</h1>
+    <form id="form">
+      <input id="email" type="text" placeholder="Email cím" />
+
+      <input id="pwd" type="password" placeholder="Jelszó" />
+      <p id="result" style="color: red"></p>
+
+      <br />
+
+      <button type="submit">Bejelentkezés</button>
+    </form>
+
+    <br />
+
+    <a href="regisztracio.html">Regisztráció</a>
+
+    <script>
+      document
+        .getElementById("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const email = document.getElementById("email").value.trim();
+          const pwd = document.getElementById("pwd").value;
+          const result = document.getElementById("result");
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (email === "") {
+            result.textContent = "";
+          } else if (!emailRegex.test(email)) {
+            result.textContent = "Hibas e-mail cím!";
+            return;
+          } else {
+            result.textContent = "";
+          }
+
+          console.log("Email:", email);
+          console.log("Jelszo:", pwd);
+        });
+    </script>
+  </body>
+</html>

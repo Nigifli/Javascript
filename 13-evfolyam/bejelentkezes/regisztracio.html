@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regisztráció</title>
+
+    <style>
+      body {
+        text-align: center;
+        background-color: #a9ebe2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Regisztráció</h1>
+    <form id="form">
+      <input id="email" type="text" placeholder="Email cím" />
+
+      <input id="pwd1" type="password" placeholder="Jelszó újra" />
+      <input id="pwd2" type="password" placeholder="Jelszó újra" />
+
+      <div id="result" style="color: red"></div>
+
+      <br />
+
+      <button type="submit">Regisztráció</button>
+    </form>
+
+    <br />
+
+    <a href="belepes.html">Bejelentkezés</a>
+
+    <script>
+      document
+        .getElementById("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const email = document.getElementById("email").value.trim();
+
+          const pwd1 = document.getElementById("pwd1").value;
+          const pwd2 = document.getElementById("pwd2").value;
+
+          const result = document.getElementById("result");
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (email === "") {
+            result.textContent = "";
+          } else if (!emailRegex.test(email) && pwd1 !== pwd2) {
+            result.innerHTML =
+              "<p>Hibás e-mail cím!<br>A két jelszó nem egyezik!</p>";
+            return;
+          } else if (!emailRegex.test(email)) {
+            result.innerHTML = "<p>Hibás e-mail cím!</p>";
+            return;
+          } else if (pwd1 !== pwd2) {
+            result.innerHTML = "<p>A két jelszó nem egyezik!</p>";
+            return;
+          } else {
+            result.textContent = "";
+          }
+
+          console.log("Email:", email);
+          console.log("Jelszo:", pwd1);
+          console.log("Jelszo ujra:", pwd2);
+        });
+    </script>
+  </body>
+</html>
