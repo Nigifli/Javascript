@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void main() {
     String vers = '''Rossz a világ? Légy jó tehát magad!
 Üres a lét? Adj tartalmat neki!
