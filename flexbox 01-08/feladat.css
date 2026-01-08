@@ -1,0 +1,23 @@
+.red {
+    background-color: red;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.blue {
+    background-color: lightblue;
+    height: 50vh;
+    max-width: 30%;
+}
+
+.grey {
+    background-color: lightgrey;
+    width: 10%;
+}
+
+.green {
+    background-color: green;
+    height: 50vh;
+    
+}
