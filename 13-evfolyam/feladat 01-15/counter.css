@@ -1,0 +1,78 @@
+:root {
+      --bg: #f5f0f5;
+      --header: #cbb9f7;
+      --btn: #e8e1fa;
+      --btn-text: #5a4d83;
+      --shadow: rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--header);
+      padding: 20px 24px;
+      font-size: 20px;
+      font-weight: lighter;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 64px);
+      gap: 20px;
+    }
+
+    .label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .value {
+      font-size: 32px;
+      font-weight: 500;
+    }
+
+    .row {
+      display: flex;
+      gap: 16px;
+    }
+
+    button {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      border: none;
+      background: var(--btn);
+      color: var(--btn-text);
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 10px var(--shadow);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    button:active {
+      transform: translateY(2px);
+      box-shadow: 0 3px 6px var(--shadow);
+    }
+
+    .small {
+      font-size: 15px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .top-sign {
+        font-size: xx-large;
+    }

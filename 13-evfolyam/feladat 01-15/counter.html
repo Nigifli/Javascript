@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Counter</title>
+  <link rel="stylesheet" href="counter.css">
+  
+</head>
+<body>
+  <header>Counter</header>
+
+  <main>
+    <div class="label">Counter value:</div>
+    <div id="counter" class="value">0</div>
+
+    <div class="row">
+      <button class="top-sign" onclick="changeCounter(-1)">−</button>
+      <button class="top-sign" onclick="changeCounter(1)">+</button>
+    </div>
+
+    <div class="row">
+      <button class="small" onclick="changeCounter(-10)">-10</button>
+      <button class="small" onclick="changeCounter(10)">+10</button>
+    </div>
+  </main>
+</body>
+<script src="counter.js"></script>
+</html>
