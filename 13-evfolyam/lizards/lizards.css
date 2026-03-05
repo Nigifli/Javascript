@@ -1,0 +1,21 @@
+.navbar {
+    background-color: yellow;
+    width: 100%;
+    margin: 5px;
+}
+
+.nav-link {
+    color: green;
+}
+
+.nav-left {
+    text-align: start;
+}
+
+.nav-right {
+    text-align: end;
+}
+
+.list {
+    color: green;
+}
